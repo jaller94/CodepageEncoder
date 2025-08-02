@@ -115,9 +115,9 @@ class CodepageEncoder {
   /**
      * Encode a string in the most optimal set of codepages.
      *
-     * @param  {string}   input         Text that needs encoded
-     * @param  {array}    candidates    An array of candidate codepages that are allowed to be used, ranked by importance
-     * @return {Uint8Array}             Return an array of bytes with the encoded string
+     * @param  {string}    input                          Text that needs encoded
+     * @param  {string[]}  candidates                     An array of candidate codepages that are allowed to be used, ranked by importance
+     * @return {{codepage: string, bytes: Uint8Array}[]}  Return an array of bytes with the encoded string
      *
      */
   static autoEncode(input, candidates) {

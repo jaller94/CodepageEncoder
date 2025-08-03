@@ -230,15 +230,15 @@ class CodepageEncoder {
 
           for (let j = 0; j < 16; j++) {
             const subvalue = value[i];
-            if (subvalue === undefined) {
+            if (typeof subvalue !== "object") {
               continue;
             }
             const subsubvalue = subvalue[j];
-            if (typeof subvalue[j] !== "number") {
+            if (typeof subsubvalue !== "number") {
               continue;
             }
 
-            codepoints[i * 16 + j] = subvalue[j];
+            codepoints[i * 16 + j] = subsubvalue;
           }
         }
       } else {

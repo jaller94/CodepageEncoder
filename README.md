@@ -1,6 +1,11 @@
 # CodepageEncoder
 
-A library for converting Unicode to obscure single byte codepage for use with thermal printers. This library is internally used by `esc-pos-encoder`, `star-prnt-encoder` and `receipt-printer-encoder` and limited in functionality. We recommend that you use another library like `iconv` or `iconv-lite` for use with your project – unless you really, really need the codepages that are supported by this library.
+A library for converting Unicode to obscure single byte codepage for use with
+thermal printers. This library is internally used by `esc-pos-encoder`,
+`star-prnt-encoder` and `receipt-printer-encoder` and limited in functionality.
+We recommend that you use another library like `iconv` or `iconv-lite` for use
+with your project – unless you really, really need the codepages that are
+supported by this library.
 
 ## Usage
 
@@ -17,20 +22,20 @@ Or import it as an ES module:
 
     import CodepageEncoder from '@point-of-sale/codepage-encoder';
     CodepageEncoder.encode('ξεσκεπάζω την ψυχοφθόρα βδελυγμία', 'cp869');
-    
 
 ## Methods
 
-The following static methods are available for you to use. You don't need to instantiate the object first.
-
+The following static methods are available for you to use. You don't need to
+instantiate the object first.
 
 ### CodepageEncoder.encode
 
-Encode the string to the codepage you specified. The result will be a Uint8Array containing all the bytes of the string in your codepage.
+Encode the string to the codepage you specified. The result will be a Uint8Array
+containing all the bytes of the string in your codepage.
 
     CodepageEncoder.encode('ξεσκεπάζω την ψυχοφθόρα βδελυγμία', 'cp869');
 
-Result: 
+Result:
 
     Uint8Array(33) [
         232, 222, 236, 228, 222, 234, 155,
@@ -40,18 +45,21 @@ Result:
         242, 216, 230, 159, 214
     ]
 
-See the method `CodepageEncoder.getEncodings()` for determining which codepages are currently supported by this library.
-
+See the method `CodepageEncoder.getEncodings()` for determining which codepages
+are currently supported by this library.
 
 ### CodepageEncoder.autoEncode
 
-Encode the string with the most optimal set of codepages from the candidates codepages that you specified. The result will be a array of text fragments with the name of the codepage and an Uint8Array containing all the bytes of the string in that codepage.
+Encode the string with the most optimal set of codepages from the candidates
+codepages that you specified. The result will be a array of text fragments with
+the name of the codepage and an Uint8Array containing all the bytes of the
+string in that codepage.
 
     CodepageEncoder.autoEncode('Qwerty ψυχοφθόρα på Съешь łódź', [
         'cp437', 'cp858', 'cp860', 'cp861', 'cp863', 'cp865', 'cp852', 'cp857', 'cp855', 'cp866', 'cp869'
     ]);
 
-Result: 
+Result:
 
     [
         {
@@ -90,8 +98,8 @@ Result:
         }
     ]
 
-See the method `CodepageEncoder.getEncodings()` for determining which codepages are currently supported by this library.
-
+See the method `CodepageEncoder.getEncodings()` for determining which codepages
+are currently supported by this library.
 
 ### CodepageEncoder.supports
 
@@ -99,18 +107,17 @@ Determine if the specified codepage is supported. Return a boolean.
 
     CodepageEncoder.supports('cp1119')
 
-Result: 
+Result:
 
     true
 
-
 ### CodepageEncoder.getEncodings
 
-Get the currently supported encodings. Returns an array of codepage identifiers. 
+Get the currently supported encodings. Returns an array of codepage identifiers.
 
     CodepageEncoder.getEncodings()
-    
-Result: 
+
+Result:
 
     [
         'cp437',       'cp720',       'cp737',       'cp775',
@@ -129,20 +136,18 @@ Result:
         'windows1257', 'windows1258'
     ]
 
-
 ### CodepageEncoder.getTestStrings
 
 Get a number of example strings that can be used for the codepage you specified.
 
     CodepageEncoder.getTestStrings('cp865')
 
-Result: 
+Result:
 
     [
         { language: 'sv', string: 'Flygande bäckasiner söka strax hwila på mjuka tuvor.' },
         { language: 'dk', string: 'Quizdeltagerne spiste jordbær med fløde' }
     ]
-
 
 ## License
 

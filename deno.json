@@ -1,0 +1,9 @@
+{
+  "name": "@jaller94/codepage-encoder",
+  "version": "3.0.0",
+  "license": "MIT",
+  "exports": "./src/codepage-encoder.ts",
+  "imports": {
+    "@std/assert": "jsr:@std/assert@^1.0.13"
+  }
+}

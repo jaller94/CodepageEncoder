@@ -2,7 +2,9 @@
   "version": "5",
   "specifiers": {
     "jsr:@std/assert@^1.0.13": "1.0.13",
-    "jsr:@std/internal@^1.0.6": "1.0.8"
+    "jsr:@std/internal@^1.0.6": "1.0.8",
+    "npm:iconv-lite@*": "0.6.3",
+    "npm:iconv-lite@~0.6.3": "0.6.3"
   },
   "jsr": {
     "@std/assert@1.0.13": {
@@ -15,9 +17,21 @@
       "integrity": "fc66e846d8d38a47cffd274d80d2ca3f0de71040f855783724bb6b87f60891f5"
     }
   },
+  "npm": {
+    "iconv-lite@0.6.3": {
+      "integrity": "sha512-4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw==",
+      "dependencies": [
+        "safer-buffer"
+      ]
+    },
+    "safer-buffer@2.1.2": {
+      "integrity": "sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg=="
+    }
+  },
   "workspace": {
     "dependencies": [
-      "jsr:@std/assert@^1.0.13"
+      "jsr:@std/assert@^1.0.13",
+      "npm:iconv-lite@*"
     ],
     "packageJson": {
       "dependencies": [

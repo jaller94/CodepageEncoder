@@ -1,5 +1,5 @@
 import { assertEquals } from "@std/assert";
-import iconv from "npm:iconv-lite^0.6.3";
+import iconv from "iconv-lite";
 import CodepageEncoder from "./codepage-encoder.ts";
 
 const encodings = CodepageEncoder.getEncodings();

@@ -20,4 +20,7 @@ jobs:
       # you want to use a custom linter configuration you can add a configuration file with --config
       - run: deno lint
 
+      # Install dependencies
+      - run: deno install
+
       - run: deno test
